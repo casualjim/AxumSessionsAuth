@@ -22,7 +22,8 @@ anyhow = "1.0.66"
 serde = "1.0.147"
 
 [dependencies.axum_session]
-version = "0.2.0"
+git = "https://github.com/casualjim/AxumSessions.git"
+branch = "swap-chrono-time"
 features = ["sqlite-rustls"]
 
 [dependencies.axum_session_auth]

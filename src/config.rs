@@ -1,7 +1,7 @@
-use chrono::Duration;
 use serde::{de::DeserializeOwned, Serialize};
 use std::borrow::Cow;
 use std::hash::Hash;
+use time::Duration;
 
 /// Configuration for how the Auth service is used.
 ///
@@ -90,7 +90,7 @@ where
     /// # Examples
     /// ```rust
     /// use axum_session_auth::AuthConfig;
-    /// use chrono::Duration;
+    /// use time::Duration;
     ///
     /// let config = AuthConfig::<i64>::default().with_max_age(Some(Duration::days(2)));
     /// ```

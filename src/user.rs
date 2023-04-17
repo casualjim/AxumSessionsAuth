@@ -1,5 +1,4 @@
 use crate::Authentication;
-use chrono::{DateTime, Utc};
 use serde::{de::DeserializeOwned, Serialize};
 use std::{
     default::Default,
@@ -7,6 +6,7 @@ use std::{
     hash::Hash,
     marker::{PhantomData, Send, Sync},
 };
+use time::OffsetDateTime;
 
 /// AuthSession that is generated when a user is routed via Axum
 ///
@@ -20,7 +20,7 @@ where
     Pool: Clone + Send + Sync + fmt::Debug + 'static,
 {
     pub current_user: Option<User>,
-    pub expires: DateTime<Utc>,
+    pub expires: OffsetDateTime,
     pub phantom_pool: PhantomData<Pool>,
     pub phantom_type: PhantomData<Type>,
 }
